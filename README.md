@@ -2,7 +2,6 @@
 
 
 Replace env in Kubernetes resources files
-Use with Google Cloud Builder
 
 cloudbuild.yaml : 
 ```

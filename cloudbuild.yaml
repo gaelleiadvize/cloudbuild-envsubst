@@ -1,0 +1,14 @@
+steps:
+- name: 'eu.gcr.io/$PROJECT_ID/envsubst'
+  args: ['/workspace/deployment.yaml', '/workspace/deployment.yaml']
+  env:
+  - 'COMMIT_SHA=$COMMIT_SHA'
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+    cat deployment.yaml
